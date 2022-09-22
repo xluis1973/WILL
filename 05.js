@@ -14,6 +14,14 @@ function pluck(array, propiedad) {
   // Pista: es una buena oportunidad para usar map.
 
   // Tu código acá:
+  return array.map(elem=>{
+
+    if(propiedad=='name'){
+      return elem.name;
+    }else {
+      return elem.price;
+    }
+  });
 
 }
 
