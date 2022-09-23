@@ -13,6 +13,25 @@ function numeroSimetrico(num) {
   // numeroSimetrico(11711) devuelve true
 
   // Tu código:
+  let resto=9;
+  let queda=num;
+  let numeros=[];
+
+  while(resto!=queda && queda!=0){
+    resto=queda%10;
+    queda=Math.trunc(queda/10);
+    numeros.push(resto);
+  }
+  if(queda!=0) numeros.push(queda);
+  let largo=numeros.length -1;
+  let bandera=true;
+  numeros.forEach(element => {
+    if(element!=numeros[largo]){
+      bandera= false;
+    }
+    largo--;
+  });
+  return bandera;
 
 }
 
