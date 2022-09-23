@@ -5,12 +5,18 @@
   No comentar la funcion 
 */
 function crearClasePersona() {
+  
   class Persona {
     constructor(nombre, edad, hobbies, amigos) {
       // El constructor de la clase Persona recibe nombre (string), edad (integer), hobbies (array de strings), amigos (array de objetos)
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
+
+      this.nombre=nombre;
+      this.edad=edad;
+      this.hobbies=hobbies;
+      this.amigos=amigos;
 
     }
 
@@ -20,6 +26,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.amigos.push({nombre:nombre,edad:edad});
 
     }
 
@@ -28,6 +35,7 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      this.hobbies.push(hobby);
 
     }
     getFriends() {
@@ -39,6 +47,9 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+      return this.amigos.map(elem=>{
+        return elem.nombre;
+      });
     }
 
     getHobbies() {
@@ -47,6 +58,7 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
+      return this.hobbies;
 
     }
 
@@ -67,6 +79,11 @@ function crearClasePersona() {
 
       // Tu código aca:
 
+      let promedio=0;
+      this.amigos.forEach(elem => {
+        promedio=promedio+elem.edad;
+      });
+      return promedio/this.amigos.length;
     }
   };
 
